@@ -1,7 +1,5 @@
 package com.example.login.config;
 
-import java.util.HashSet;
-
 import com.example.login.Entity.Role;
 import com.example.login.Entity.User;
 import com.example.login.Repository.RoleRepository;
@@ -11,6 +9,8 @@ import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
+
+import java.util.HashSet;
 
 
 @Component
