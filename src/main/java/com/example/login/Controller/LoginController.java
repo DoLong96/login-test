@@ -33,7 +33,7 @@ public class LoginController {
     public  String admin(Model model) {
         List<Student> studentList=studentService.getAll();
         model.addAttribute("Student",studentList);
-        return "studentList";
+        return "admin";
     }
 
     @GetMapping("/admin/add")
