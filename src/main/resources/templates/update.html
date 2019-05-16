@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.thymeleaf.org ">
+<head>
+    <meta charset="UTF-8">
+    <title>ADD</title>
+</head>
+<body>
+<form th:action="@{/admin/update/{id}(id=${student.getId()})}" th:object="${student}"  method="post">
+    <table>
+        <tr>
+            <th>Name</th>
+            <td>
+                <input type="text" name="fullname" th:value="${student.getFullname()}"/>
+            </td>
+        </tr>
+        <tr>
+            <th>Brithday</th>
+            <td>
+                <input type="date" name="brithday" th:value="${student.getBrithday()}"/>
+            </td>
+        </tr>
+        <tr>
+            <th>Phone</th>
+            <td>
+                <input type="text" name="phone" th:value="${student.getPhone()}"/>
+            </td>
+        </tr>
+        <tr>
+            <th>Address</th>
+            <td>
+                <input type="text" name="address" th:value="${student.getAddress()}"/>
+            </td>
+        </tr>
+    </table>
+    <input type="submit" value="Edit"/>
+</form>
+</body>
+</html>
