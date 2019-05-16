@@ -6,6 +6,27 @@
 </head>
 <body>
 <h2>Welcome, Admin</h2>
-<a th:href="@{/admin/listStaff}">Staff Manager</a>
+    <table border="2">
+        <tr>
+            <th>Name</th>
+            <th>Birthday</th>
+            <th>Phone</th>
+            <th>Address</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+        <tr th:each="st : ${Student}">
+            <td th:text="${st.getFullname()}"></td>
+            <td th:text="${st.getBrithday()}"></td>
+            <td th:text="${st.getPhone()}"></td>
+            <td th:text="${st.getAddress()}"></td>
+            <td><a type="submit" th:href="@{/admin/update/{id}(id=${st.getId()})}">Edit</a></td>
+            <td><a type="submit" th:href="@{/admin/remove/{id}(id=${st.getId()})}">Delete</a></td>
+        </tr>
+    </table>
+<form th:action="@{/admin/add}">
+    <input type="submit" value="ADDStudent ">
+</form>
+
 </body>
 </html>
